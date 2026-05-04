@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Balance</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Your Balance</h1>
+  <div id="balance" class="balance"></div>
+
+  <a href="index.html">
+    <button class="secondary">Back</button>
+  </a>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+document.getElementById("balance").innerText = formatMoney(balance);
+</script>
+
+</body>
+</html>

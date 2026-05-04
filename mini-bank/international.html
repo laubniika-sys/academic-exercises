@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>International Deposit</h1>
+
+  <input type="number" id="amount" placeholder="Amount">
+
+  <br>
+  <button onclick="convert('euro')">Euro</button>
+  <button onclick="convert('real')">Real</button>
+  <button onclick="convert('yen')">Yen</button>
+  <button onclick="convert('pound')">Pound</button>
+
+  <br>
+  <a href="deposit.html"><button>Back</button></a>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+function convert(currency) {
+    let amount = Number(document.getElementById("amount").value);
+
+    if (amount <= 0) {
+        alert("Invalid amount");
+        return;
+    }
+
+    let value = amount * rates[currency];
+    updateBalance(value);
+
+    alert("Converted! New balance: $" + balance.toFixed(2));
+}
+</script>
+
+</body>
+</html>

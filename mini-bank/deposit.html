@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deposit</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Deposit</h1>
+
+  <input type="number" id="amount" placeholder="Enter amount">
+
+  <button onclick="deposit()">Deposit</button>
+
+  <div id="message" class="message"></div>
+
+  <a href="international.html">
+    <button class="secondary">International Deposit</button>
+  </a>
+
+  <a href="index.html">
+    <button class="secondary">Back</button>
+  </a>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+function deposit() {
+    let amount = Number(document.getElementById("amount").value);
+
+    if (amount <= 0) {
+        document.getElementById("message").innerText = "Invalid amount!";
+        return;
+    }
+
+    updateBalance(amount);
+
+    document.getElementById("message").innerText =
+        "Deposited! New balance: " + formatMoney(balance);
+}
+</script>
+
+</body>
+</html>

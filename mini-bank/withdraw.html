@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Withdraw</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Withdraw</h1>
+
+  <input type="number" id="amount" placeholder="Enter amount">
+
+  <button onclick="withdraw()">Withdraw</button>
+
+  <div id="message" class="message"></div>
+
+  <a href="index.html">
+    <button class="secondary">Back</button>
+  </a>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+function withdraw() {
+    let amount = Number(document.getElementById("amount").value);
+
+    if (amount > balance) {
+        document.getElementById("message").innerText = "Insufficient funds!";
+        return;
+    }
+
+    updateBalance(-amount);
+
+    document.getElementById("message").innerText =
+        "Withdraw successful! New balance: " + formatMoney(balance);
+}
+</script>
+
+</body>
+</html>
